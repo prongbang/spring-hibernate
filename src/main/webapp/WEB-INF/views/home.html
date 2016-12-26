@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Spring MVC + Thymeleaf 3 + Spring Security 4 + Hibernate 5</title>
+	<object th:include="/fragments/head" th:remove="tag" ></object>
+</head>
+<body style="height:550px">
+	
+	<div th:include="fragments/header" th:remove="tag"></div>
+	
+	<section class="section">
+		<div class="container">
+			<h1 class="title">Logged user : <strong th:text="${#authentication.name}">User</strong></h1>
+			<!--h2 class="subtitle">Roles : <strong th:text="${#authentication.principal.authorities}">[ROLE_USER, ROLE_ADMIN, ROLE_DBA]</strong></h2-->
+			<h2 class="subtitle">Roles : <strong th:text="${#authentication.authorities}">[ROLE_USER, ROLE_ADMIN, ROLE_DBA]</strong></h2>		
+		</div>
+	</section>
+	<section class="section">
+		<div class="container">
+			<h1 class="title">Table : Person</h1>
+			<table class="table">
+				<tr>
+					<th>ID</th>
+					<th>NAME</th>
+					<th>COUNTRY</th>
+				</tr>	
+				<tr th:each="p : ${persons}">
+					<td>[[${p.id}]]</td>
+					<td>[[${p.name}]]</td>
+					<td>[[${p.country}]]</td>
+				</tr>
+			</table>
+		</div>
+	</section> 
+	<section class="section">
+		<div class="container">
+			<h1 class="title">Table : Address</h1>
+			<table class="table">
+				<tr>
+					<th>ID</th>
+					<th>PERSON ID</th>
+					<th>ADDRESS</th>
+				</tr>
+				<tr th:each="a : ${addresss}">
+					<td>[[${a.id}]]</td>
+					<td>[[${a.person.id}]]</td>
+					<td>[[${a.addressName}]]</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+	
+	<div th:include="fragments/footer" th:remove="tag"></div> 
+	
+	<script>
+		var navItem = document.getElementById("home"); 
+		navItem.className += " is-active";
+	</script>
+</body>
+</html>
