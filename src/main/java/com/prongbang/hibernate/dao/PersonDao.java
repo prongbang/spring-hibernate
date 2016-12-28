@@ -9,4 +9,6 @@ public interface PersonDao extends AbstractDao<Person, Integer>{
 
 	public List<Address> findPersonAddressByPersonId(Integer pk) throws Exception;  
 	
+	public List<Address> findAddressByPersonId(Integer pk) throws Exception; 
+	
 }

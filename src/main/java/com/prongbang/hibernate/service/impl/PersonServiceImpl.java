@@ -1,11 +1,6 @@
 package com.prongbang.hibernate.service.impl;
 
 import java.util.List;
- 
-
-
-
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,13 +13,13 @@ import com.prongbang.hibernate.service.PersonService;
 
 @Service
 public class PersonServiceImpl implements PersonService {
- 
+
 	@Autowired
 	private PersonDao personDao;
-	
+
 	@Transactional(readOnly = true)
 	public Person findByPK(Integer pk) throws Exception {
-		 
+
 		return personDao.findByPK(pk);
 	}
 
@@ -78,14 +73,20 @@ public class PersonServiceImpl implements PersonService {
 
 	@Transactional(readOnly = true)
 	public List<Person> findAll() throws Exception {
-		
+
 		return personDao.findAll();
 	}
 
 	@Override
 	public List<Address> findPersonAddressByPersonId(Integer pk) throws Exception {
-		
+
 		return personDao.findPersonAddressByPersonId(pk);
-	} 
+	}
+
+	@Override
+	public List<Address> findAddressByPersonId(Integer pk) throws Exception {
+
+		return personDao.findAddressByPersonId(pk);
+	}
 
 }

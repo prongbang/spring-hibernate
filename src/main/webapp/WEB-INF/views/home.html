@@ -34,7 +34,7 @@
 	</section> 
 	<section class="section">
 		<div class="container">
-			<h1 class="title">Table : Address</h1>
+			<h1 class="title">Table : Address | HQL Query</h1>
 			<table class="table">
 				<tr>
 					<th>ID</th>
@@ -45,6 +45,23 @@
 					<td>[[${a.id}]]</td>
 					<td>[[${a.person.id}]]</td>
 					<td>[[${a.addressName}]]</td>
+				</tr>
+			</table>
+		</div>
+	</section>
+		<section class="section">
+		<div class="container">
+			<h1 class="title">Table : Address | SQL Query</h1>
+			<table class="table">
+				<tr>
+					<th>ID</th>
+					<th>PERSON ID</th>
+					<th>ADDRESS</th>
+				</tr>
+				<tr th:each="ad : ${addrNative}">
+					<td>[[${ad.id}]]</td>
+					<td>[[${ad.person.id}]]</td>
+					<td>[[${ad.addressName}]]</td>
 				</tr>
 			</table>
 		</div>

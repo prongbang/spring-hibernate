@@ -130,5 +130,5 @@ public class AbstractDaoImpl<T, PK extends Serializable> implements AbstractDao<
             throw e;
         }
     }
-
+    
 }

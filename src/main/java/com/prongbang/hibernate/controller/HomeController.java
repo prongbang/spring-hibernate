@@ -36,6 +36,10 @@ public class HomeController {
 			System.out.println(gson.toJson(addresss));
 			model.addAttribute("addresss", addresss);
 			
+			List<Address> addrNative = personService.findAddressByPersonId(1);
+			System.out.println(gson.toJson(addrNative));
+			model.addAttribute("addrNative", addrNative);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
