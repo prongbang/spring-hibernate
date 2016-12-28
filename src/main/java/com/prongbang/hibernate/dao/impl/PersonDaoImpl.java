@@ -1,17 +1,12 @@
 package com.prongbang.hibernate.dao.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.EntityManager;
-
-import org.hibernate.SQLQuery;
 import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 import org.hibernate.transform.Transformers;
 import org.springframework.stereotype.Repository;
 
-import com.google.gson.Gson;
 import com.prongbang.hibernate.dao.PersonDao;
 import com.prongbang.hibernate.entities.Address;
 import com.prongbang.hibernate.entities.Person;
